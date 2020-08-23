@@ -3,7 +3,7 @@ import React from 'react';
 const DailyReport = () => {
 	return (
 		<div>
-			<h1>Daily Report</h1>
+			<h1>Daily Report Under Construction</h1>
 		</div>
 	);
 };

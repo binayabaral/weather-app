@@ -1,3 +1,20 @@
+# Weather App
+
+Provides weather information based on your current location.
+Currently Under COnstruction.
+
+## Planend Features
+
+- Current Conditions
+- Hourly Data
+- Daily Data
+
+## Live Demo
+
+This app is libe [here](https://weather.binayabaral.com.np).
+
+## Starter Info
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
