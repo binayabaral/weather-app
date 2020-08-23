@@ -1,0 +1,36 @@
+.current-condition {
+	h1 {
+		color: $light-green;
+	}
+	span {
+		display: block;
+		text-align: center;
+	}
+
+	.weather {
+		.img {
+			width: 100px;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&--description {
+			font-size: 30px;
+			text-transform: capitalize;
+			font-weight: bold;
+		}
+	}
+
+	.icon-and-temp {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.temperature {
+			color: $light-green;
+			font-size: 25px;
+		}
+	}
+}

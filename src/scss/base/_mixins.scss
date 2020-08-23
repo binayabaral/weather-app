@@ -1,0 +1,83 @@
+/// Animate css properties
+// usage
+// scss - @include animate(color);
+//     or @include animate(color width);
+//     or @include animate(color width, 1s, linear);
+//
+$animation-speed: 0.3s !default;
+
+@mixin animate($properties, $duration: $animation-speed, $easing: ease-in-out) {
+	$list: ();
+	@each $prop in $properties {
+		$str: #{$prop} #{$duration} #{$easing};
+		$list: join($list, #{$str}, comma);
+	}
+	transition: $list;
+}
+
+/// Mixin for styling form-placeholders
+/// @example scss - Usage
+///   @include placeholder {
+///    color: #333;
+///   }
+///
+///   input[type='text'],
+///   input[type='tel'],
+///   input[type='email'] {
+///     @include placeholder {
+///      color: red;
+///     }
+///   }
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		opacity: 1;
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&.placeholder {
+		@content;
+	}
+}
+
+/// Font-size px to rem calc
+/// @example scss - Usage
+/// selector {
+///    @include rem-font-size(16px);
+/// }
+
+@mixin rem-font-size($pxSize) {
+	font-size: $pxSize;
+	font-size: ($pxSize / 10px) + rem;
+}
+
+// truncate the text
+// usage @include truncate;
+//
+@mixin truncate {
+	max-width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+// @font-face code generator
+// *** demo ***
+// @include font-face("font-name", ("../fonts/font-file-name"), normal, normal );
+@mixin font-face($font, $url, $weight: normal, $style: normal) {
+	@font-face {
+		font-family: $font;
+		src: url('#{$url}.eot?5sv48p');
+		src: url('#{$url}.eot?#iefix5sv48p') format('embedded-opentype'), url('#{$url}.svg?5sv48p') format('svg'), url('#{$url}.ttf?5sv48p') format('truetype'), url('#{$url}.woff?5sv48p') format('woff'), url('#{$url}.woff2?5sv48p') format('woff2');
+		font-weight: $weight;
+		font-style: $style;
+	}
+}

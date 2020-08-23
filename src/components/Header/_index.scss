@@ -1,0 +1,146 @@
+#header {
+	padding: 15px 0;
+	position: relative;
+}
+
+.header--nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	display: block;
+	margin-right: 30px;
+	position: relative;
+	z-index: 9;
+}
+
+.navigation-menu {
+	@extend %listreset;
+	display: flex;
+	font-size: 17px;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	right: 0;
+	flex-direction: column;
+	justify-content: center;
+	background: #485563;
+	z-index: 5;
+	transform: translateX(-200%);
+	@include animate(transform);
+
+	.nav-active & {
+		transform: none;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		top: -157px;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background: #485563;
+		z-index: -1;
+
+		@include media('screen', '>=tablet') {
+			content: none;
+		}
+	}
+
+	@include media('screen', '>=tablet') {
+		position: static;
+		flex-direction: row;
+		justify-content: flex-end;
+		background: transparent;
+		transform: none;
+	}
+
+	li {
+		text-align: center;
+		margin-bottom: 15px;
+
+		@include media('screen', '>=tablet') {
+			margin-bottom: 0;
+		}
+		+ li {
+			@include media('screen', '>=tablet') {
+				margin-left: 30px;
+			}
+		}
+
+		a {
+			&.active {
+				color: $white;
+			}
+		}
+	}
+
+	a {
+		text-decoration: none;
+		@include animate(color);
+
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+.nav-opener {
+	height: 23px;
+	width: 28px;
+	display: block;
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	z-index: 9;
+
+	@include media('screen', '>=tablet') {
+		display: none;
+	}
+
+	&:before,
+	&:after,
+	span {
+		position: absolute;
+		height: 3px;
+		width: 28px;
+		left: 0;
+		background: $white;
+		top: 10px;
+		@include animate(transform height top);
+	}
+
+	&:before {
+		content: '';
+		top: 0;
+	}
+
+	&:after {
+		content: '';
+		top: 20px;
+	}
+
+	.nav-active & {
+		span {
+			height: 0;
+		}
+
+		&:before {
+			top: 9px;
+			transform: rotate(-45deg);
+		}
+
+		&:after {
+			top: 9px;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+.resize-active * {
+	transition: none !important;
+}

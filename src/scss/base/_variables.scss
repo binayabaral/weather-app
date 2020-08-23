@@ -1,0 +1,72 @@
+$breakpoints: (
+	'xs-phone': 320px,
+	'phone': 480px,
+	'tablet': 768px,
+	'desktop': 1024px,
+	'widescreen': 1200px,
+);
+
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)',
+);
+
+// Colors
+// Color calculator - http://razorjam.github.io/sasscolourfunctioncalculator/
+// Color names - http://name-of-color.com/
+
+$gray: #999;
+$black: #333;
+$white: #d0d0d0;
+$light-green: #84c225;
+
+$base-font-sans-serif: 'Open Sans', 'Arial', 'Helvetica Neue', 'Helvetica', sans-serif;
+$base-font-serif: 'Times New Roman', 'Times', 'Baskerville', 'Georgia', serif;
+
+// This is the default html and body font-size for the base rem value.
+$rem-base: 16px;
+
+// Body
+$base-text-color: $white;
+$base-background-color: linear-gradient(to top, #09203f 0%, #537895 100%);
+$font-size-base: 14px;
+$line-height-base: 1.4;
+$base-font-family: $base-font-sans-serif;
+
+$vertical-rhythm: ($line-height-base * 1em);
+
+$base-min-width: 320px;
+
+// Liks
+$base-link-color: $light-green;
+
+// Buttons
+$btn-color: $white;
+$btn-background: $black;
+$btn-padding: 0.4em 0.7em;
+$btn-font-size: inherit;
+
+// Forms
+$form-element-padding: $btn-padding;
+$form-element-border-color: $gray;
+$form-element-focus-border-color: $black;
+$placeholder-color: $gray;
+
+// Headers
+$h1-font-size: 35px;
+$h2-font-size: 25px;
+$h3-font-size: 23px;
+$h4-font-size: 20px;
+$h5-font-size: 18px;
+$h6-font-size: 16px;
+
+$headings-font-family: inherit;
+$headings-color: inherit;
+
+$animation-speed: 0.3s;

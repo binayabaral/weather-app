@@ -1,0 +1,35 @@
+//import google fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap');
+
+// standard vendor includes
+@import 'vendors/include-media';
+@import 'vendors/normalize';
+
+//do not change order of these inclues
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/helpers';
+@import 'base/reset';
+
+//custom includes
+@import 'base/typography';
+@import 'base/forms';
+@import 'base/print-reset';
+
+@import '../components/Header';
+@import '../components/LocationSelector';
+
+@import '../views/current-conditions';
+
+#root {
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+.container {
+	max-width: 1100px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
